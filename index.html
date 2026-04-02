@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="color-scheme" content="light dark">
+  <title>For You — I Love You</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300,400,600,700&family=Manrope:wght@300,400,500,600,700&display=swap" rel="stylesheet">
+
+  <style>
+    /* (Full CSS styling as in the previous detailed code) */
+    /* For brevity here, please use the full CSS from the previous response */
+  </style>
+</head>
+
+<body>
+  <header aria-label="Top navigation">
+    <div class="wrap">
+      <div class="nav">
+        <div class="brand" aria-label="Site title">
+          <span class="sig">A small love letter</span>
+          <span class="tag">written with intention</span>
+        </div>
+        <div class="navActions">
+          <button class="pill" id="openPersonalize" type="button" aria-haspopup="dialog" aria-controls="personalizeDialog">
+            <span class="dot" aria-hidden="true"></span>Personalize
+          </button>
+          <button class="pill primary" id="scrollToReasons" type="button">
+            Read why
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="wrap hero">
+      <div class="heroGrid">
+        <section class="headline reveal" aria-label="Hero message">
+          <div>
+            <div class="kicker">
+              <span>For</span>
+              <span class="line" aria-hidden="true"></span>
+              <span id="gfNameKicker">my favorite person</span>
+            </div>
+
+            <h1>
+              I love you<br/>
+              <span style="color: var(--wine);">so much.</span>
+            </h1>
+
+            <p class="sub" id="heroSub">
+              Not in a “big dramatic moment” way only—also in the quiet way.
+              The everyday way. The way that shows up, chooses you, and keeps choosing you.
+            </p>
+
+            <div class="heroCTA" role="group" aria-label="Primary actions">
+              <button class="btn" id="revealLine" type="button">Open the next sentence</button>
+              <button class="btn btnGhost" id="copyLink" type="button" title="Copies a tiny message you can send">
+                Copy a sweet text
+              </button>
+              <span class="tinyNote" id="copyStatus" aria-live="polite"></span>
+            </div>
+          </div>
+
+          <div class="tinyNote" style="position:relative; z-index:1;">
+            Tip: personalize names & a date in the top-right.
+          </div>
+        </section>
+
+        <aside class="letter reveal" aria-label="Love letter panel">
+          <div class="letterTop">
+            <div class="stamp">
+              <div class="seal" aria-hidden="true"></div>
+              <div class="stampText">
+                <strong id="dearLine">To you, love</strong>
+                <span id="dateLine">Today</span>
+              </div>
+            </div>
+            <div class="counter" aria-label="Love counter">
+              <span class="chip"><span aria-hidden="true">♥</span> <span id="loveCount">0</span></span>
+              <span class="chip" id="sinceChip">since always</span>
+            </div>
+          </div>
+
+          <div class="letterBody">
+            <p class="letterP">If you ever wonder how I feel, here’s the simplest truth:</p>
+
+            <p class="type" id="typedLine" aria-live="polite">
+              I love you for the way you exist in the world—soft, strong, and completely you.
+            </p>
+
+            <p class="letterP" id="extraLine" hidden>
+              I love your laugh, your patience, your little habits, and even the parts you don’t always see as special—
+              because they’re the exact things that make you <em>you</em>.
+            </p>
+
+            <div class="signature" aria-label="Signature">
+              <div>
+                <p class="sigName" id="fromLine">— me</p>
+                <p class="sigSmall" id="psLine">P.S. You are my best day.</p>
+              </div>
+
+              <!-- Inline SVG heart (no external images) -->
+              <svg class="heartGlyph" viewBox="0 0 64 64" role="img" aria-label="A heart">
+                <defs>
+                  <linearGradient id="hg" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0" stop-color="#f2b6c4"/>
+                    <stop offset="0.55" stop-color="#d65a75"/>
+                    <stop offset="1" stop-color="#6b1d33"/>
+                  </linearGradient>
+                </defs>
+                <path d="M32 56s-18.8-11.8-26-24.3C-1.2 19.2 7.4 6.7 20.8 8.5c4.9.7 8.6 3.8 11.2 7.6 2.6-3.8 6.3-6.9 11.2-7.6 13.4-1.8 22 10.7 14.8 23.2C50.8 44.2 32 56 32 56z"
+                      fill="url(#hg)" stroke="rgba(31,26,24,.12)" stroke-width="1.2"/>
+                <path d="M18 20c2-4 6.7-7 11.7-5.4" fill="none" stroke="rgba(255,255,255,.45)" stroke-linecap="round" stroke-width="2"/>
+              </svg>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+
+    <section aria-label="Reasons section">
+      <div class="wrap">
+        <div class="sectionTitle">
+          <h2 class="reveal">A few reasons (out of a million)</h2>
+          <p class="hint reveal">Tap a reason to make it glow. Add your own in “Personalize”.</p>
+        </div>
+
+        <div class="reasons" id="reasonsGrid">
+          <article class="reason reveal" tabindex="0" role="button" aria-label="Reason 1">
+            <div class="reasonNum">Reason 01</div>
+            <strong>Your presence</strong>
+            <p>You make ordinary moments feel safe, warm, and worth remembering.</p>
+          </article>
+          <article class="reason reveal" tabindex="0" role="button" aria-label="Reason 2">
+            <div class="reasonNum">Reason 02</div>
+            <strong>Your heart</strong>
+            <p>You care in a way that’s gentle, real, and never performative.</p>
+          </article>
+          <article class="reason reveal" tabindex="0" role="button" aria-label="Reason 3">
+            <div class="reasonNum">Reason 03</div>
+            <strong>Your mind</strong>
+            <p>The way you think is beautiful—curious, sharp, and uniquely yours.</p>
+          </article>
+          <article class="reason reveal" tabindex="0" role="button" aria-label="Reason 4">
+            <div class="reasonNum">Reason 04</div>
+            <strong>Your laugh</strong>
+            <p>It changes the temperature of the entire room. I chase it on purpose.</p>
+          </article>
+          <article class="reason reveal" tabindex="0" role="button" aria-label="Reason 5">
+            <div class="reasonNum">Reason 05</div>
+            <strong>Your softness & strength</strong>
+            <p>You’re tender without being fragile. Brave without being loud.</p>
+          </article>
+          <article class="reason reveal" tabindex="0" role="button" aria-label="Reason 6">
+            <div class="reasonNum">Reason 06</div>
+            <strong>Us</strong>
+            <p>Even on hard days, I still want to come back to you—every time.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section aria-label="Promise section">
+      <div class="wrap">
+        <div class="promise reveal">
+          <div>
+            <h3 id="promiseTitle">A promise, said simply</h3>
+            <p id="promiseBody">
+              I’m not here for the highlight reel only. I’m here for the real thing:
+              the messy days, the quiet days, the growing days—and the forever kinds of days.
+            </p>
+          </div>
+          <div class="promiseControls" role="group" aria-label="Promise actions">
+            <button class="pill" id="toggleExtra" type="button">Add a little more</button>
+            <button class="pill primary" id="confetti" type="button">Make it sparkle</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer aria-label="Footer">
+      <div class="wrap">
+        <div class="footerInner">
+          <div class="small">
+            <strong style="font-family:'Fraunces', serif; font-weight:600;">Made for one person only.</strong><br/>
+            <span id="footerLine">If you’re reading this: I love you. Still. Always.</span>
+          </div>
+          <div class="small">
+            <span class="chip" aria-label="A small reminder">Keep this page. Open it on hard days.</span>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Personalize Modal -->
+    <dialog id="personalizeDialog" aria-label="Personalize the love letter">
+      <div class="modal">
+        <div class="modalTop">
+          <div>
+            <h3>Personalize</h3>
+            <div class="small" style="color: rgba(31,26,24,.70); margin-top:4px;">
+              Fill in a few details and the letter updates instantly.
+            </div>
+          </div>
+          <button class="closeX" id="closePersonalize" type="button" aria-label="Close dialog">✕</button>
+        </div>
+
+        <form class="form" id="personalizeForm" autocomplete="on">
+          <div>
+            <label for="gfName">Her name</label>
+            <input id="gfName" name="gfName" placeholder="e.g., Sofia" />
+          </div>
+          <div>
+            <label for="yourName">Your name</label>
+            <input id="yourName" name="yourName" placeholder="e.g., Alex" />
+          </div>
+          <div>
+            <label for="sinceDate">Since date (optional)</label>
+            <input id="sinceDate" name="sinceDate" type="date" />
+          </div>
+          <div>
+            <label for="shortPS">P.S. line</label>
+            <input id="shortPS" name="shortPS" placeholder="e.g., You’re my favorite hello." />
+          </div>
+
+          <div style="grid-column: 1 / -1;">
+            <label for="customReason">Add one custom reason</label>
+            <textarea id="customReason" name="customReason" placeholder="Write something only she would recognize…"></textarea>
+          </div>
+
+          <div class="modalActions">
+            <button class="pill" type="reset" id="resetForm">Reset</button>
+            <button class="pill primary" type="button" id="applyPersonalize">
+              Apply
+            </button>
+          </div>
+        </form>
+      </div>
+    </dialog>
+  </main>
+
+  <script>
+    // (Full JavaScript as in the previous detailed code)
+    // For brevity here, please use the full JavaScript from the previous response
+  </script>
+</body>
+</html>
